@@ -1,10 +1,10 @@
 import ballerina/lang.regexp;
 import ballerina/io;
 
-var namesToNums = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
-
-
 class Day01 {
+    
+    final string[] namesToNums = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+
     public function part1() returns int|error {
         var sum = 0;
         foreach var line in check io:fileReadLines("inputs/day01.txt") {
@@ -21,7 +21,7 @@ class Day01 {
             var l = line;
             boolean allreplaced = false;
             while !allreplaced {
-                var startingpoints = from var name in namesToNums.enumerate()
+                var startingpoints = from var name in self.namesToNums.enumerate()
                                     where l.indexOf(name[1]) !is () 
                                     order by l.indexOf(name[1])
                                     select name;
