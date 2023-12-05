@@ -75,7 +75,7 @@ class Day02 {
                 maxGreen = int:max(maxGreen, curGreen);
             }
             if !illegalMove {
-                io:println(string `${maxRed} ${maxBlue} ${maxGreen}`);
+                //io:println(string `${maxRed} ${maxBlue} ${maxGreen}`);
                 sum += maxRed * maxBlue * maxGreen;
             }
         }
